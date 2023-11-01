@@ -33,7 +33,7 @@ var Stack = /** @class */ (function () {
      * @returns check is stack empty
      */
     Stack.prototype.isEmpty = function () {
-        return !!this.items.length;
+        return !this.items.length;
     };
     /**
      * return size of stack
@@ -45,11 +45,16 @@ var Stack = /** @class */ (function () {
      * return string represention of a stack
      */
     Stack.prototype.toString = function () {
-        console.log('this.items', this.items);
         return this.items.join('🚀');
     };
     return Stack;
 }());
 var stack = new Stack(1, 2, 3);
+stack.push(3);
+var isEmpty = stack.isEmpty();
+stack.pop();
+console.log('stack.peek()', stack.peek());
+console.log('stack.size()', stack.size());
 var text = stack.toString();
+console.log('isEmpty', isEmpty);
 console.log('text', text);

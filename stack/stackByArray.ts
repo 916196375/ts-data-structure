@@ -36,7 +36,7 @@ class Stack {
    * @returns check is stack empty
    */
   isEmpty() {
-    return !!this.items.length
+    return !this.items.length
   }
 
   /**
@@ -50,12 +50,18 @@ class Stack {
    * return string represention of a stack
    */
   toString() {
-    console.log('this.items', this.items)
     return this.items.join('🚀')
   }
 
 }
 
 const stack = new Stack(1, 2, 3)
+stack.push(3)
+const isEmpty = stack.isEmpty()
+stack.pop()
+console.log('stack.peek()', stack.peek())
+console.log('stack.size()', stack.size())
 const text = stack.toString()
+console.log('isEmpty', isEmpty)
 console.log('text', text)
+
