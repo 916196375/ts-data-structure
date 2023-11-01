@@ -2,9 +2,8 @@ type Item = any;
 
 class Stack {
   items: Item[];
-  constructor(...items: any[]) {
-    this.items = [];
-    items.concat(...items)
+  constructor(...args: any[]) {
+    this.items = [].concat(...args)
   }
 
   /**
@@ -51,6 +50,7 @@ class Stack {
    * return string represention of a stack
    */
   toString() {
+    console.log('this.items', this.items)
     return this.items.join('🚀')
   }
 

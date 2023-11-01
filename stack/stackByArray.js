@@ -1,11 +1,10 @@
 var Stack = /** @class */ (function () {
     function Stack() {
-        var items = [];
+        var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            items[_i] = arguments[_i];
+            args[_i] = arguments[_i];
         }
-        this.items = [];
-        items.concat.apply(items, items);
+        this.items = [].concat.apply([], args);
     }
     /**
      * inset item at top of stack
@@ -46,6 +45,7 @@ var Stack = /** @class */ (function () {
      * return string represention of a stack
      */
     Stack.prototype.toString = function () {
+        console.log('this.items', this.items);
         return this.items.join('🚀');
     };
     return Stack;
